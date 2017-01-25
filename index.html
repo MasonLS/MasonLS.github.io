@@ -69,6 +69,10 @@
         text-indent: 30px;
       }
 
+      /* PROJECTS */
+      #project-detail img {
+        margin: 20px;
+      }
 
       #projects-silo {
         max-height: 100vh;
@@ -83,14 +87,18 @@
         opacity: .3;
       }
       #projects-silo .img-container {
-        margin-top: 10%;
+        margin-top: 10px;
       }
       .img-container {
         border: 2px solid black;
       }
+      #project-detail {
+        margin-top: 10px;
+      }
       #project-detail img {
-        width: 100%;
+        width: 500px;
         height: auto;
+        float: left;
       }
       #project-detail h1 {
         margin-bottom: 15px;
@@ -101,99 +109,158 @@
 
      <!-- COMPONENT TEMPLATES -->
 
-    <script type="text/x-template" id="projects-silo-template">
-      <div class="col-md-3" id="projects-silo">
-        <div class="col-md-12 col-xs-4">
-          <div class="img-container">
-            <a href="#"><img src="http://i.imgur.com/vFMx4DC.png" class="mg-responsive center-block"></img></a>
-          </div>
-        </div>
-        <div class="col-md-12 col-xs-4">
-          <div class="img-container">
-            <a href="#"><img src="http://i.imgur.com/YlNjOZV.png" class="img-responsive center-block"></img></a>
-          </div>
-        </div>
-      </div>
-    </script>
-
-    <script type="text/x-template" id="project-detail-template">
-      <div class="col-md-6" id="project-detail">
-        <h1>Cryptify</h1>
-        <div class="img-container">
-          <img src="http://i.imgur.com/vFMx4DC.png" class="img-responsive center-block"></img>
-        </div>
-      </div>
-    </script>
+    <!-- ABOUT -->
 
     <script type="text/x-template" id="about-template">
-      <div class="col-sm-8 col-sm-offset-2" id="about">
-        <div class="row">
-        <div class="col-md-6">
-        <img class="img-circle img-responsive center-block" src="http://i.imgur.com/cXbceDq.jpg">
-        </div>
-        <div class="col-md-6">
-          <h1>Hi,</h1>
-          <p>
-            I'm Mason and I like to build things out of JavaScript. I used to make a living buying and selling art books. While I was doing that, I learned to program.
-            Then it became "a thing." Now I can't stop. I've tried various New Age forms of therapy. The only thing that seems to help is science fiction.
-            Sometimes, if I think about science fiction - close my eyes, take a deep breath, think about aliens - my fingers will start to stray
-            from their key-bindings...
-          </p>
-        </div>
+      <div>
+        <navbar></navbar>
+        <div class="col-sm-8 col-sm-offset-2" id="about">
+          <div class="row">
+            <div class="col-md-6">
+              <img class="img-circle img-responsive center-block" src="http://i.imgur.com/cXbceDq.jpg">
+            </div>
+            <div class="col-md-6">
+              <h1>Hi,</h1>
+              <p>
+                I'm Mason and I like to build things out of JavaScript. I used to make a living buying and selling art books. While I was doing that, I learned to program.
+                Then it became "a thing." Now I can't stop. I've tried various New Age forms of therapy. The only thing that seems to help is science fiction.
+                Sometimes, if I think about science fiction - close my eyes, take a deep breath, think about aliens - my fingers will start to stray
+                from their key-bindings...
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </script>
+
+    <!-- PROJECTS -->
+
+    <script type="text/x-template" id="projects-template">
+      <div>
+      <navbar></navbar>
+        <div class="container" id="projects">
+          <div class="row">
+
+            <div class="col-md-9 col-xs-12 img-container" id="project-detail">
+                <img src="http://i.imgur.com/vFMx4DC.png" class="img-responsive center-block"></img>
+                <h1>Cryptify</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div class="col-md-3 col-xs-12" id="projects-silo">
+              <div class="col-md-12 col-xs-4">
+                <div class="img-container">
+                  <a href="#"><img src="http://i.imgur.com/vFMx4DC.png" class="mg-responsive center-block"></img></a>
+                </div>
+              </div>
+              <div class="col-md-12 col-xs-4">
+                <div class="img-container">
+                  <a href="#"><img src="http://i.imgur.com/YlNjOZV.png" class="img-responsive center-block"></img></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <!-- V-LINK -->
+    <script type="text/x-template" id="v-link-template">
+      <a class="navbar-brand" v-bind:href="href" v-bind:class="{ active: isActive }" v-on:click="go">
+        <slot></slot>
+      </a>
     </script>
 
     <!-- NAVBAR -->
-
-    <nav class="navbar">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li><a class="navbar-brand" href="#">About</a></li>
-          <li><a class="navbar-brand" href="#">Projects</a></li>
-          <li><a class="navbar-brand" href="#">Resume</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">LinkedIn</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Cryptify</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="navbar-right collapse navbar-collapse">
-          <p class="navbar-text">masonseale88@gmail.com</p>
+    <script type="text/x-template" id="navbar-template">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><v-link href="/">About</v-link></li>
+            <li><v-link href="/projects">Projects</v-link></li>
+            <li><v-link href="/resume">Resume</v-link></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Cryptify</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="navbar-right collapse navbar-collapse">
+            <p class="navbar-text">masonseale88@gmail.com</p>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </script>
 
-    <div id="app" class="container-fluid">
-      <div class="row">
-        <about></about>
-      </div>
-    </div>
+    <!-- HTML -->
+
+    <div id="app" class="container-fluid"></div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script type="text/javascript">
-      Vue.component('projects-silo', {
-        template: '#projects-silo-template'
+
+      const About = { template: '#about-template' }
+      const Projects = { template: '#projects-template' }
+
+      const routes = {
+        '/': About,
+        '/projects': Projects
+      }
+
+      Vue.component('v-link', {
+        template: '#v-link-template',
+        props: {
+          href: String,
+          required: true
+        },
+        computed: {
+          isActive () {
+            return this.href === this.$root.currentRoute;
+          }
+        },
+        methods: {
+          go (event) {
+            event.preventDefault();
+            this.$root.currentRoute = this.href;
+            window.history.pushState(
+              null,
+              routes[this.href],
+              this.href
+            );
+          }
+        }
       });
 
-      Vue.component('project-detail', {
-        template: '#project-detail-template'
+      Vue.component('navbar', {
+        template: '#navbar-template'
       });
 
-      Vue.component('about', {
-        template: '#about-template'
+      const app = new Vue({
+        el: '#app',
+        data: {
+          currentRoute: window.location.pathname
+        },
+        computed: {
+          ViewComponent () {
+            return routes[this.currentRoute] || About
+          }
+        },
+        render (h) { return h(this.ViewComponent) }
       });
 
-
-      const vm = new Vue({
-        el: '#app'
+      window.addEventListener('popstate', () => {
+        app.currentRoute = window.location.pathname
       });
+
     </script>
   </body>
 </html>
