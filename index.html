@@ -70,8 +70,10 @@
       }
 
       /* PROJECTS */
-      #project-detail img {
+      #project-detail img, #video {
         margin: 20px;
+        width: 560px;
+        float: left;
       }
 
       #projects-silo {
@@ -94,11 +96,6 @@
       }
       #project-detail {
         margin-top: 10px;
-      }
-      #project-detail img {
-        width: 500px;
-        height: auto;
-        float: left;
       }
       #project-detail h1 {
         margin-bottom: 15px;
@@ -149,7 +146,20 @@
                 </p>
             </div>
 
+            <!-- <div class="col-md-9 col-xs-12 img-container" id="project-detail">
+                <div id="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/2ce5PKNHSoA" frameborder="0" allowfullscreen></iframe></div>
+                <h1>Cryptify</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div> -->
+
             <div class="col-md-3 col-xs-12" id="projects-silo">
+              <div class="col-md-12 col-xs-4">
+                <div class="img-container">
+                  <a href="#"><img src="http://i.imgur.com/vFMx4DC.png" class="mg-responsive center-block"></img></a>
+                </div>
+              </div>
               <div class="col-md-12 col-xs-4">
                 <div class="img-container">
                   <a href="#"><img src="http://i.imgur.com/vFMx4DC.png" class="mg-responsive center-block"></img></a>
@@ -181,14 +191,14 @@
           <ul class="nav navbar-nav">
             <li><v-link href="/">About</v-link></li>
             <li><v-link href="/projects">Projects</v-link></li>
-            <li><v-link href="/resume">Resume</v-link></li>
+            <li><a class="navbar-brand" href="https://drive.google.com/open?id=0Bxrqe7IWOMmtcWJ3alAwNWcyWDA">Resume</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="https://github.com/MasonLS">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/mason-seale-206690126">LinkedIn</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Cryptify</a></li>
+                <li><a href="https://cryptify.herokuapp.com">Cryptify</a></li>
               </ul>
             </li>
           </ul>
