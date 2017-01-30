@@ -75,7 +75,12 @@
         width: 560px;
         float: left;
       }
-
+      #project-tech {
+        font-weight: bold;
+      }
+      #project-description {
+        font-size: 18px;
+      }
       #projects-silo {
         max-height: 100vh;
         overflow-y: scroll;
@@ -100,6 +105,16 @@
       #project-detail h1 {
         margin-bottom: 15px;
       }
+      #project-detail a {
+        color: black;
+      }
+      #project-detail a:hover {
+        color: black;
+        text-decoration: underline;
+      }
+      #project-detail a:visited {
+        color: black;
+      }
     </style>
   </head>
   <body>
@@ -121,8 +136,7 @@
               <p>
                 I'm Mason and I like to build things out of JavaScript. I used to make a living buying and selling art books. While I was doing that, I learned to program.
                 Then it became "a thing." Now I can't stop. I've tried various New Age forms of therapy. The only thing that seems to help is science fiction.
-                Sometimes, if I think about science fiction - close my eyes, take a deep breath, think about aliens - my fingers will start to stray
-                from their key-bindings...
+                Sometimes, if I think about science fiction - close my eyes, take a deep breath, think about aliens - my fingers will stray from their key-bindings until I'm doing something normal, like making food...
               </p>
             </div>
           </div>
@@ -143,8 +157,11 @@
     <script type="text/x-template" id="project-detail-template">
       <div class="col-md-9 col-xs-12 img-container" id="project-detail">
           <img :src="project.imageURL" class="img-responsive center-block"></img>
-          <h1>{{ project.name }}</h1>
-          <p>
+          <h1>{{ project.name }} <small><a :href="project.link.url" target="_blank">@{{ project.link.type }}</a></small></h1>
+          <p id="project-tech">
+            {{ project.tech.join(' / ') }}
+          </p>
+          <p id="project-description">
             {{ project.description }}
           </p>
       </div>
@@ -179,14 +196,14 @@
           <ul class="nav navbar-nav">
             <li><v-link href="/">About</v-link></li>
             <li><v-link href="/projects">Projects</v-link></li>
-            <li><a class="navbar-brand" href="https://drive.google.com/open?id=0Bxrqe7IWOMmtcWJ3alAwNWcyWDA">Resume</a></li>
+            <li><a class="navbar-brand" href="https://drive.google.com/open?id=0Bxrqe7IWOMmtcWJ3alAwNWcyWDA" target="_blank">Resume</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="https://github.com/MasonLS">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/mason-seale-206690126">LinkedIn</a></li>
+                <li><a href="https://github.com/MasonLS" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/mason-seale-206690126" target="_blank">LinkedIn</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="https://cryptify.herokuapp.com">Cryptify</a></li>
+                <li><a href="https://cryptify.herokuapp.com" target="_blank">Cryptify</a></li>
               </ul>
             </li>
           </ul>
@@ -209,18 +226,43 @@
       const projects = [
         {
           name: 'Cryptify',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          link: {
+            type: 'Heroku',
+            url: 'https://cryptify.herokuapp.com'
+          },
+          tech: ['React', 'Redux', 'Express', 'Server-side rendering', 'Spotify API', 'Heroku'],
+          description: 'This was an app I built for a code challenge, which was to “do something cool with the Spotify API.” I liked how it turned out and so decided to include here. The concept: Remembering passwords is a pain. To make things easier for themselves, users often resort to bad security practices - common phrases, multiple accounts with variations of the same password. Strong passwords can be generated with the use of pseudo-random algorithms, but how are you supposed to remember those? What if your password was a song? Excuse me? Cryptify hashes your favorite tracks into high-strength passwords (gobbledygook) based on their sonic qualities. This way, all you need to remember is what track you chose, as Cryptify will always reproduce your unique password. Obviously, the idea presents its own unique set of security issues, the foremost being civilization’s relatively limited (to a computer) music library. It’s a concept app that I find interesting to think about.',
           imageURL: 'http://i.imgur.com/vFMx4DC.png'
+        },
+        {
+          name: 'OpenBounty',
+          link: {
+            type: 'YouTube',
+            url: 'https://www.youtube.com/watch?v=2ce5PKNHSoA'
+          },
+          tech: ['Node', 'Postgres', 'Angular', 'Express', 'GitHub API', 'PayPal API', 'Heroku'],
+          description: 'OpenBounty was my team’s capstone project for Fullstack Academy. The idea behind the app was to figure out a way to make donations to open source software more impactful. Talking to the experienced developers who were our instructors, we learned of a desire to contribute money towards fixing a bug or particular issue in a given codebase. So we built a crowdfunding platform that allowed project maintainers to start a bug bounty fund, receive donations, and assign those monies to GitHub issues as, in the spirit of open source, more of a tip or indication of priority than reward for accepted pull requests. Unique challenges included synchronizing our data with GitHub’s, upon which ours was heavily reliant, a problem I solved by building instance methods onto our models that prefetched the relevant row from GitHub and packaged the two together for the client’s consumption. In retrospect, having become familiar with tools like Redis, I would have preferred to implement a caching layer to eliminate the optimization problem of redundant calls as much as possible. Ah, well!',
+          imageURL: 'http://i.imgur.com/L7uyJhe.png'
         },
         {
           name: 'Liger',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          link: {
+            type: 'GitHub',
+            url: 'https://github.com/MasonLS/Liger'
+          },
+          tech: ['Angular', 'jQuery', 'Chrome Developer APIs'],
+          description: 'Weekend-length hackathon project built during my time at Fullstack Academy. A Chrome extension for those who want to up their social media game with the least amount of effort possible, Liger automates liking Facebook posts. It lets you target certain friends or organizations, specify posts or comments, and the frequency with which to auto-like them.  Mostly a joke. I had a fever when I built this. Most of the challenges involved were edge-cases, such as preventing the unliking of previously liked posts. My sister texted me, “Why am I getting notifications saying you keep liking the same three posts?” What, I had to test it on someone.',
           imageURL: 'http://i.imgur.com/YlNjOZV.png'
         },
         {
-          name: 'Cryptify',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          imageURL: 'http://i.imgur.com/vFMx4DC.png'
+          name: 'Too Much Spaghetti',
+          link: {
+            type: 'Heroku',
+            url: 'https://too-much-spaghetti.herokuapp.com'
+          },
+          tech: ['Node', 'Postgres', 'Angular', 'Express', 'Stripe', 'Google Maps API', 'Heroku'],
+          description: 'My first full-SEAN-stack application. Built in-collaboration with a team of three other wannabe developers, Too Much Spaghetti is basically a Seamless.com clone based on the legal-nightmare-concept of people selling each other their leftover food. This was my first experience building out a comprehensive API and working on an agile-ish team, participating in daily scrum meetings and the like. My areas of contribution spanned the stack, from database design, to backend flow, to front end routing and architecting the account page UI to, at the last minute, for overachiever credit, leveraging Google Maps’ Distance Matrix API into providing location-based information. One of my teammates and I agreed: the most fun we had on this project was obsessively refactoring our database’s seed script into its platonic ideal, glittering on the horizon of perfection’s asymptote.',
+          imageURL: 'http://i.imgur.com/u4Nv6Cg.png'
         }
       ];
 
