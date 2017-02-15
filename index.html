@@ -360,7 +360,7 @@
         render (h) { return h(this.ViewComponent) }
       });
 
-      window.addEventListener('popstate', () => {
+      window.addEventListener('popstate', function() {
         app.currentRoute = window.location.pathname
       });
 
